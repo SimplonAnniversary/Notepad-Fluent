@@ -267,7 +267,6 @@
                  AcceptsReturn="True" 
                  Style="{StaticResource TextBoxStyleTransparent}"
                  Text="{x:Bind ViewModel.Data.Text, Mode=TwoWay}"
-                 SelectedText="{x:Bind ViewModel.Data.SelectedText, Mode=TwoWay}"
                  IsSpellCheckEnabled="False" />
 
 
