@@ -261,7 +261,7 @@
                  BorderThickness="0"
                  HorizontalAlignment="Stretch"
                  VerticalAlignment="Stretch"
-                 Padding="12,0" 
+                 Padding="12" 
                  ScrollViewer.VerticalScrollBarVisibility="Auto"
                  InputScope="Default" 
                  AcceptsReturn="True" 
