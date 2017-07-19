@@ -1,6 +1,7 @@
 ﻿using NotepadUwp.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,12 +49,41 @@ namespace NotepadUwp.ViewModels
             int index = selectionStart;
 
             // Paste behind the cursor
-            if (dataPackage.Contains(StandardDataFormats.Text))
+            try
             {
-                var text = await dataPackage.GetTextAsync();
-                Data.Text = Data.Text.Insert(index, text);
+                if (dataPackage.Contains(StandardDataFormats.Text))
+                {
+                    var text = await dataPackage.GetTextAsync();
+                    Data.Text = Data.Text.Insert(index, text);
+
+                    success = true;
+                }
             }
+            catch
+            {
+                Debug.WriteLine("MainPageViewModel - Paste from clipboard FAILED");
+            }
+
             
+            return success;
+        }
+
+        // Copy
+        public bool Copy(string text)
+        {
+            bool success = false;
+
+            // Create DataPackage
+            DataPackage dataPackage = new DataPackage();
+            dataPackage.RequestedOperation = DataPackageOperation.Copy;
+
+            // Fill it with the selected text
+            dataPackage.SetText(text);
+
+            // Send it to the clipboard
+            Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(dataPackage);
+            success = true;
+
             return success;
         }
 

@@ -188,7 +188,8 @@
                               Label="Cut" />
                 <AppBarButton x:Name="cbtnCopy"
                               Icon="Copy"
-                              Label="Copy" />
+                              Label="Copy"
+                              Click="cbtnCopy_Click"/>
                 <AppBarButton x:Name="cbtnPaste"
                               Icon="Paste"
                               Label="Paste"

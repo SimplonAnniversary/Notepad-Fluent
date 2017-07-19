@@ -36,5 +36,11 @@ namespace NotepadUwp.Views
         {
             await ViewModel.Paste(txtContent.SelectionStart);
         }
+
+        private void cbtnCopy_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Copy(txtContent.SelectedText);
+            // TODO: Show UI indication/message that the selected text has been copied to the clipboard
+        }
     }
 }
