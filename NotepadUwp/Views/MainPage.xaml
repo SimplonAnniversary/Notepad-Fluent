@@ -112,9 +112,9 @@
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="BorderBrush" Storyboard.TargetName="BorderElement">
                                                 <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlBorderBrushPointerOver}"/>
                                             </ObjectAnimationUsingKeyFrames>
-                                            <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="BorderElement">
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Background" Storyboard.TargetName="BorderElement">
                                                 <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlBackgroundPointerOver}"/>
-                                            </ObjectAnimationUsingKeyFrames>-->
+                                            </ObjectAnimationUsingKeyFrames>
                                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="PlaceholderTextContentPresenter">
                                                 <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource TextControlPlaceholderForegroundPointerOver}"/>
                                             </ObjectAnimationUsingKeyFrames>
@@ -191,7 +191,8 @@
                               Label="Copy" />
                 <AppBarButton x:Name="cbtnPaste"
                               Icon="Paste"
-                              Label="Paste" />
+                              Label="Paste"
+                              Click="cbtnPaste_Click"/>
                 <AppBarSeparator />
                 <AppBarButton x:Name="cbtnFind"
                               Icon="Find"
@@ -265,10 +266,10 @@
                  ScrollViewer.VerticalScrollBarVisibility="Auto"
                  InputScope="Default" 
                  AcceptsReturn="True" 
-                 Style="{StaticResource TextBoxStyleTransparent}"
                  Text="{x:Bind ViewModel.Data.Text, Mode=TwoWay}"
-                 IsSpellCheckEnabled="False" />
-
+                 IsSpellCheckEnabled="False"
+                 Style="{StaticResource TextBoxStyleTransparent}"
+                 />
 
     </Grid>
 </Page>

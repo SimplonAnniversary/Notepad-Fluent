@@ -18,6 +18,7 @@ namespace NotepadUwp.Views
 {
     public sealed partial class MainPage : Page
     {
+        //public MainPageViewModel ViewModel => DataContext as MainPageViewModel;
         public MainPageViewModel ViewModel { get; set; }
 
         public MainPage()
@@ -29,6 +30,11 @@ namespace NotepadUwp.Views
         private async void cbtnOpenFile_Click(object sender, RoutedEventArgs e)
         {
             await ViewModel.Load();
+        }
+
+        private async void cbtnPaste_Click(object sender, RoutedEventArgs e)
+        {
+            await ViewModel.Paste(txtContent.SelectionStart);
         }
     }
 }
