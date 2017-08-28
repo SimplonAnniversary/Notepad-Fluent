@@ -260,13 +260,14 @@
                  BorderThickness="0"
                  HorizontalAlignment="Stretch"
                  VerticalAlignment="Stretch"
-                 Padding="12,0" 
+                 Padding="12,6" 
                  ScrollViewer.VerticalScrollBarVisibility="Auto"
                  InputScope="Default" 
                  AcceptsReturn="True" 
                  Style="{StaticResource TextBoxStyleTransparent}"
                  Text="{x:Bind ViewModel.Data.Text, Mode=TwoWay}"
-                 IsSpellCheckEnabled="False" />
+                 IsSpellCheckEnabled="False"
+                 />
 
 
     </Grid>
