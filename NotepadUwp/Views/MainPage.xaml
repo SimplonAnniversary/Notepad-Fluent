@@ -191,7 +191,8 @@
                               Click="cbtnOpenFile_Click"/>
                 <AppBarButton x:Name="cbtnSaveFile"
                               Icon="Save"
-                              Label="Save"/>
+                              Label="Save"
+                              Click="cbtnSaveFile_Click"/>
                 <!--<AppBarButton x:Name="cbtnCut"
                               Icon="Cut"
                               Label="Cut" />

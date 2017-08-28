@@ -30,5 +30,10 @@ namespace NotepadUwp.Views
         {
             await ViewModel.Load();
         }
+
+        private async void cbtnSaveFile_Click(object sender, RoutedEventArgs e)
+        {
+            await ViewModel.SaveAs();
+        }
     }
 }

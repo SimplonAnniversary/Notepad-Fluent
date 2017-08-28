@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.Storage.Provider;
 
 namespace NotepadUwp.Models
 {
@@ -14,6 +15,35 @@ namespace NotepadUwp.Models
         // Save
         public static void Save(TextDataModel data)
         {
+
+        }
+
+        // Save As
+        public static async Task<StorageFile> SaveAs(TextDataModel data)
+        {
+            FileSavePicker picker = new FileSavePicker();
+            picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
+            picker.FileTypeChoices.Add("Text Documents", new List<string>() { ".txt" });
+            picker.SuggestedFileName = "*";
+
+            StorageFile file = await picker.PickSaveFileAsync();
+
+            if (file != null)
+            {
+                // Prevent remote access to file until saving is done
+                CachedFileManager.DeferUpdates(file);
+
+                // Write the stuff to the file
+                await FileIO.WriteTextAsync(file, data.Text);
+
+                // Let Windows know stuff is done
+                FileUpdateStatus status = await CachedFileManager.CompleteUpdatesAsync(file);
+
+                // TODO; Let the user know stuff has been saved
+            }
+
+
+            return file;
 
         }
 
