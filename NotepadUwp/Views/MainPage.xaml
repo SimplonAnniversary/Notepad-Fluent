@@ -168,7 +168,7 @@
 
         <!-- Titlebar -->
         <Grid Grid.Row="0"
-              Background="{ThemeResource SystemControlBackgroundBaseLowBrush}">
+              Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}">
             <TextBlock Text="Notepad"
                        Style="{ThemeResource CaptionTextBlockStyle}"
                        Margin="12,0"
@@ -178,8 +178,7 @@
         <!-- Commandbar -->
         <controls:OpenDownCommandBar x:Name="cmbar"
                                      Grid.Row="1"
-                                     Opacity="100"
-                                     Background="{ThemeResource SystemControlBackgroundBaseLowBrush}"
+                                     Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}"
                                      Style="{ThemeResource CommandBarRevealStyle}" 
                                      ClosedDisplayMode="Compact">
             <controls:OpenDownCommandBar.PrimaryCommands>
@@ -267,7 +266,6 @@
                  AcceptsReturn="True" 
                  Style="{StaticResource TextBoxStyleTransparent}"
                  Text="{x:Bind ViewModel.Data.Text, Mode=TwoWay}"
-                 SelectedText="{x:Bind ViewModel.Data.SelectedText, Mode=TwoWay}"
                  IsSpellCheckEnabled="False" />
 
 
