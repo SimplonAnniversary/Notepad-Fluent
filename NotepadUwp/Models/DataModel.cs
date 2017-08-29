@@ -67,6 +67,9 @@ namespace NotepadUwp.Models
                 catch { }
             }
 
+            data.DocumentTitle = file.DisplayName + file.FileType;
+
+
             return data;
         }
 

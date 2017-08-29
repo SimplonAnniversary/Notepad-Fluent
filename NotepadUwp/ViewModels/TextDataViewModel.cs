@@ -17,10 +17,10 @@ namespace NotepadUwp.ViewModels
             set { SetProperty(This.Text, value, () => This.Text = value); }
         }
 
-        public string SelectedText
+        public string DocumentTitle
         {
-            get { return This.SelectedText; }
-            set { SetProperty(This.SelectedText, value, () => This.SelectedText = value); }
+            get { return This.DocumentTitle; }
+            set { SetProperty(This.DocumentTitle, value, () => This.DocumentTitle = value); }
         }
     }
 }

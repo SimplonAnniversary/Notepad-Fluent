@@ -29,11 +29,14 @@ namespace NotepadUwp.Views
         private async void cbtnOpenFile_Click(object sender, RoutedEventArgs e)
         {
             await ViewModel.Load();
+            tblFileName.Text = ViewModel.Data.DocumentTitle;
         }
 
         private async void cbtnSaveFile_Click(object sender, RoutedEventArgs e)
         {
             await ViewModel.SaveAs();
+            tblFileName.Text = ViewModel.Data.DocumentTitle;
+
         }
     }
 }

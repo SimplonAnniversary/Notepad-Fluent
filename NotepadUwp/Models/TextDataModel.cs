@@ -9,6 +9,6 @@ namespace NotepadUwp.Models
     public class TextDataModel
     {
         public string Text { get; set; }
-        public string SelectedText { get; set; }
+        public string DocumentTitle { get; set; }
     }
 }

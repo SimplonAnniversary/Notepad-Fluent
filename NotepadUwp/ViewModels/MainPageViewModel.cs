@@ -24,12 +24,19 @@ namespace NotepadUwp.ViewModels
             set { SetProperty(ref _Data, value); }
         }
 
-        //private StorageFile _File;
-        //public StorageFile File
+        //private string _DocumentTitle = "Untitled document";
+        //public string DocumentTitle
         //{
-        //    get { return _File; }
-        //    set { SetProperty(ref _File, value); }
+        //    get { return _DocumentTitle; }
+        //    set { SetProperty(ref _DocumentTitle, value); }
         //}
+
+        private StorageFile _File;
+        public StorageFile File
+        {
+            get { return _File; }
+            set { SetProperty(ref _File, value); }
+        }
 
 
         // Methods
@@ -45,7 +52,8 @@ namespace NotepadUwp.ViewModels
             // TODO - Expose the proper check here for the UI to react to
             if (file != null)
             {
-                //File = file;
+                File = file;
+                Data.DocumentTitle = File.DisplayName + File.FileType;
                 return true;
             }
             else
@@ -59,6 +67,8 @@ namespace NotepadUwp.ViewModels
         {
             TextDataModel data = await DataModel.Load();
             Data = new TextDataViewModel(data);
+
+            //DocumentTitle = File.DisplayName + File.DisplayType;
             return true;
         }
 
