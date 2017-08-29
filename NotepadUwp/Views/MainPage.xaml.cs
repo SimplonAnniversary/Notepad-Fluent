@@ -18,6 +18,7 @@ namespace NotepadUwp.Views
 {
     public sealed partial class MainPage : Page
     {
+        //public MainPageViewModel ViewModel => DataContext as MainPageViewModel;
         public MainPageViewModel ViewModel { get; set; }
 
         public MainPage()
@@ -37,6 +38,17 @@ namespace NotepadUwp.Views
             await ViewModel.SaveAs();
             tblFileName.Text = ViewModel.Data.DocumentTitle;
 
+        }
+
+        private async void cbtnPaste_Click(object sender, RoutedEventArgs e)
+        {
+            await ViewModel.Paste(txtContent.SelectionStart);
+        }
+
+        private void cbtnCopy_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Copy(txtContent.SelectedText);
+            // TODO: Show UI indication/message that the selected text has been copied to the clipboard
         }
     }
 }
