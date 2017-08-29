@@ -13,7 +13,7 @@ namespace NotepadUwp.ViewModels
         // Constructor
         public MainPageViewModel()
         {
-
+            Data.DocumentTitle = "Untitled";
         }
 
         // Properties

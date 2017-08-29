@@ -24,7 +24,15 @@ namespace NotepadUwp.Models
             FileSavePicker picker = new FileSavePicker();
             picker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
             picker.FileTypeChoices.Add("Text Documents", new List<string>() { ".txt" });
-            picker.SuggestedFileName = "*";
+            if (data.DocumentTitle != "")
+            {
+                picker.SuggestedFileName = data.DocumentTitle;
+                // TODO: Get original file here as well
+            }
+            else
+            {
+                picker.SuggestedFileName = "Untitled";
+            }
 
             StorageFile file = await picker.PickSaveFileAsync();
 
